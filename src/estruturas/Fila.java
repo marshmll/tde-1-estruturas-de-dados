@@ -25,12 +25,16 @@ public class Fila extends ListaEncadeada {
     }
 
     @Override
-    public void remove() {
-        if (this.tamanho > 0) {
-            this.frente = this.frente.getProximo();
+    public Integer remove() {
+        Integer dado = null;
 
+        if (this.tamanho > 0) {
+            dado = frente.getDado();
+            this.frente = this.frente.getProximo();
             this.tamanho--;
-        } else System.out.println("A fila está vazia.");
+        }
+
+        return dado;
     }
 
     public void imprime() {

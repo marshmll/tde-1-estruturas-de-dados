@@ -4,7 +4,7 @@ import estruturas.FilaVetor;
 public final class Merge {
     private Merge() {}
 
-    public static FilaVetor mergeFilaVetorOrdenado(FilaVetor filaA, FilaVetor filaB) {
+    public static FilaVetor merge(FilaVetor filaA, FilaVetor filaB) {
         FilaVetor filaC = new FilaVetor(filaA.getCapacidade() + filaB.getCapacidade());
 
         while (!filaA.vazia() && !filaB.vazia()) {
@@ -30,7 +30,7 @@ public final class Merge {
         return filaC;
     }
 
-    public static Fila mergeFilaDinamicaOrdenado(Fila filaA, Fila filaB) {
+    public static Fila merge(Fila filaA, Fila filaB) {
         Fila filaC = new Fila();
 
         while (filaA.getFrente() != null && filaB.getFrente() != null) {

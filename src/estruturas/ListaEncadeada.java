@@ -11,5 +11,5 @@ public abstract class ListaEncadeada {
 
     public abstract void insere(int dado);
 
-    public abstract void remove();
+    public abstract Integer remove();
 }

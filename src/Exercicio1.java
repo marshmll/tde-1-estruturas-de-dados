@@ -1,25 +1,35 @@
 import estruturas.Pilha;
 
+import java.util.Scanner;
+
 public class Exercicio1 {
     public static void main(String[] args) {
         System.out.println("========= EXERCÍCIO 1 =========");
 
         Pilha pilha = new Pilha();
+        Scanner sc = new Scanner(System.in);
+        int dado = -1;
 
-        pilha.insere(1);
-        pilha.insere(2);
-        pilha.insere(3);
-        pilha.insere(4);
+        do {
+            System.out.print("Digite um número para inserir na pilha (-1 para sair, -2 para remover): ");
+            dado = Integer.parseInt(sc.nextLine());
 
-        pilha.imprime();
+            if (dado == -1) {
+                System.out.println("Saindo...");
+            } else if (dado == -2) {
+                System.out.println("Removendo elemento...");
+                Integer removido = pilha.remove();
 
-        pilha.remove();
-        pilha.remove();
+                if (removido != null) System.out.println("Removido elemento " + removido);
+                else System.out.println("A pilha está vazia.");
+            } else {
+                System.out.println("Inserindo elemento " + dado);
+                pilha.insere(dado);
+            }
 
-        pilha.imprime();
+            pilha.imprime();
+        } while (dado != -1);
 
-        pilha.insere(5);
-
-        pilha.imprime();
+        sc.close();
     }
 }

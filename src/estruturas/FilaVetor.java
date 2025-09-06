@@ -30,16 +30,24 @@ public class FilaVetor {
         }
     }
 
-    public void remove() {
+    public Integer remove() {
+        Integer dado = null;
+
         if (this.tamanho > 0) {
+            dado = this.dados[this.frente];
+
             this.frente = (this.frente + 1) % this.capacidade;
             this.tamanho--;
         }
+
+        return dado;
     }
 
     public boolean vazia() {
         return this.tamanho == 0;
     }
+
+    public boolean cheia() { return  this.tamanho >= this.capacidade; }
 
     public void imprime() {
         System.out.print("FRENTE -> [");

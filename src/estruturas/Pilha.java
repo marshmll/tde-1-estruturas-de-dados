@@ -19,11 +19,17 @@ public class Pilha extends ListaEncadeada {
     }
 
     @Override
-    public void remove() {
+    public Integer remove() {
+        Integer dado = null;
+
         if (this.tamanho > 0) {
+            dado = this.atras.getDado();
+
             this.tamanho--;
             this.atras = this.atras.getProximo();
-        } else System.out.println("Pilha está vazia.");
+        }
+
+        return dado;
     }
 
     public void imprime() {
